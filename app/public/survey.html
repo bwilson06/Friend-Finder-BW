@@ -1,11 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <h1>yo</h1>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Survey Questions</h3>
+                <hr>
+                <h3><svg class="bi bi-clipboard-data" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
+                        <path fill-rule="evenodd"
+                            d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
+                        <path
+                            d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z" />
+                    </svg> | Fill out a few questions to find your best match</h3>
+        </div>
+        <hr>
+        <h2>About You</h2>
+        <br>
+        <h4>Name (required)</h4>
+        <input type="text" id="name" class="form-control" required="">
+        <br>
+        <h4>Link to Photo Image (Required)</h4>
+        <input type="text" id="name" class="form-control" required="">
+        <hr>
+        <br>
+        <h2>Question One</h2>
+        <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+        <select type="question_one" class="form-control" id="question_one">
+            <option value="1">1 (strongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (strongly agree)</option>
+        </select>
+        <br>
+        <h2>Question Two</h2>
+        <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+        <select type="question_two" class="form-control" id="question_two">
+            <option value="1">1 (strongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (strongly agree)</option>
+        </select>
+        <br>
+        <h2>Question Three</h2>
+        <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+        <select type="question_three" class="form-control" id="question_three">
+            <option value="1">1 (strongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (strongly agree)</option>
+        </select>
+        <br>
+        <h2>Question Four</h2>
+        <h4>You rarely do something just out of sheer curiosity.</h4>
+        <select type="question_four" class="form-control" id="question_four">
+            <option value="1">1 (strongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (strongly agree)</option>
+        </select>
+        <br>
+        <h2>Question five</h2>
+        <h4>People can rarely upset you.</h4>
+        <select type="question_five" class="form-control" id="question_five">
+            <option value="1">1 (strongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (strongly agree)</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">Submit <svg class="bi bi-check2-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+            <path fill-rule="evenodd" d="M8 2.5A5.5 5.5 0 1 0 13.5 8a.5.5 0 0 1 1 0 6.5 6.5 0 1 1-3.25-5.63.5.5 0 1 1-.5.865A5.472 5.472 0 0 0 8 2.5z"/>
+          </svg></button>
+        <br>
+    </div>
 </body>
+
 </html>
