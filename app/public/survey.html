@@ -36,7 +36,7 @@
         <input type="text" id="name" class="form-control" required="">
         <br>
         <h4>Link to Photo Image (Required)</h4>
-        <input type="text" id="name" class="form-control" required="">
+        <input type="text" id="user_photo" class="form-control" required="">
         <hr>
         <br>
         <h2>Question One</h2>
@@ -97,5 +97,33 @@
         <br>
     </div>
 </body>
+
+<script type="text/javascript">
+$("#submit").on("click", function(event){
+    event.preventDefault();
+    var newFriend = {
+        name: $("#name").val().trim(),
+        photo: $("user_photo").val(),
+        scores: [
+            $("#question_one").val(),
+            $("#question_two").val(),
+            $("#question_three").val(),
+            $("#question_four").val(),
+            $("#question_five").val()
+        ]
+    }
+
+    console.log(newFriend);
+
+    $.post("api/friends", newFriend,
+    function(data){
+        if (data){
+            alert("New friend added!")
+        }else{
+            alert(err)
+        }
+    })
+})
+</script>
 
 </html>
